@@ -12,8 +12,12 @@ a title to see the comic. However most people don't know XKCD comics by hand wou
 click. Browsing comics is better done in similar fashion as on xkcd.com where you can see "previuos", "next" or "random", 
 while of course tailoring for mobile use. I'm applying the swipe motion for previous/next browsing.
 
-
 ## Networking
 
 I'm using the combination of Retrofit2 with OkHttp for REST service network communication. It's a proven fast, reliable,
 flexible and solid API for network communication that I am familiar with.
+
+## Image loading
+
+I'm using the Glide library as we've tested it in production with my current project which is heavily dependent
+on performant image loading. It is solid and well maintained. 
