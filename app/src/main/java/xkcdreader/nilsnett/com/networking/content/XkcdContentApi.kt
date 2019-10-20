@@ -25,4 +25,7 @@ interface XkcdContentApi {
 
     @GET("/{id}/info.0.json")
     fun getXkcd(@Path("id") id: Int): Call<XkcdContentNetworkData>
+
+    @GET("/info.0.json")
+    fun getMostRecentXkcd(): Call<XkcdContentNetworkData>
 }
