@@ -21,3 +21,16 @@ flexible and solid API for network communication that I am familiar with.
 
 I'm using the Glide library as we've tested it in production with my current project which is heavily dependent
 on performant image loading. It is solid and well maintained. 
+
+## Model and view architecture
+
+- I use two layers for the data: 
+  - Network layer (.networking.content): 1-1 represenatation of the JSON data from the remote endpoint
+  - Domain layer (.domainmodels): Representation of the data as it makes sense with strong Kotlin data types.
+
+This allows me to unit test conversion and parsing before it hits the UI layer.
+
+- For View Architecture I settled at not implementine neither MVP or MVVM as I felt the task was sufficient simple to
+omit it. Separation between domain and network layers allowed me to put a lot of business logic outside of the Fragment
+and Activity classes still. For a production app aimed at living longer than this app, I'd definitely go for a view 
+pattern, possibly MVVM, to allow for better handling and better maintainability.   
