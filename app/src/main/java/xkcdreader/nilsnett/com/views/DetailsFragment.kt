@@ -37,5 +37,10 @@ class DetailsFragment(comicInfo: ComicInfo? = null) : BottomSheetDialogFragment(
         title.text = comic.title
         publishedDate.text = comic.humanReadableDate()
         transcript.text = comic.transcript
+        if (comic.transcript.isEmpty()) {
+            transcript.visibility = View.GONE
+            transcriptScrollView.visibility = View.GONE
+            transcriptLabel.visibility = View.GONE
+        }
     }
 }
