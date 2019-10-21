@@ -7,7 +7,7 @@ import xkcdreader.nilsnett.com.views.ComicFragment
 
 class XkcdPageAdapter(fm: FragmentManager, val maxCount: Int) : FragmentStatePagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
     override fun getItem(position: Int): Fragment {
-        val comicNumber = position + 1
+        val comicNumber = maxCount - position
         return ComicFragment(comicNumber)
     }
 

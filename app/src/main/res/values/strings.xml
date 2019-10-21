@@ -5,4 +5,5 @@
     <string name="description">Description:</string>
     <string name="published">Published:</string>
     <string name="transcript">Transcript:</string>
+    <string name="fatal_error">Unable to communicate with XKCD server, please try again later</string>
 </resources>

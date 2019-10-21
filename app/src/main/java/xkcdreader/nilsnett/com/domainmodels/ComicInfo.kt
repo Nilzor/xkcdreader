@@ -19,6 +19,7 @@ data class ComicInfo(
     val title: String,
     val uri: Uri,
     val transcript: String,
+    val number: Int,
     val dataOk: Boolean = true
 ) : Parcelable {
 
@@ -36,6 +37,7 @@ data class ComicInfo(
             ,""
             ,Uri.EMPTY,
             "",
+            -1,
             false
         )
 
@@ -56,7 +58,8 @@ data class ComicInfo(
                     model.alt,
                     model.title,
                     uri,
-                    transcript
+                    transcript,
+                    model.num
                 )
             } catch (ex: Exception) {
                 return ERRONOUS_OBJECT
