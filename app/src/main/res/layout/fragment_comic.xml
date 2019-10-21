@@ -1,28 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".BrowseActivity">
+        android:layout_height="match_parent">
+
+    <ProgressBar
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:id="@+id/loadingView"
+            android:indeterminate="true"/>
 
     <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:id="@+id/title"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            android:textSize="20sp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:textColor="#333"
+            android:textColor="#F00"
+            android:padding="20dp"
+            android:layout_marginTop="40sp"
+            android:textSize="20sp"
+            android:id="@+id/errorView"
     />
 
-    <FrameLayout
+    <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignTop="@id/title"
-            android:id="@+id/imageContainer"
-    />
+            tools:context=".BrowseActivity"
+            android:id="@+id/successView">
 
-</RelativeLayout>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:id="@+id/title"
+                android:padding="4dp"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="#333"
+        />
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/title"
+                android:id="@+id/imageContainer"
+        />
+
+    </RelativeLayout>
+</FrameLayout>
