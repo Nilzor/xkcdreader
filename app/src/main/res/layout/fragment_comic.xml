@@ -27,7 +27,7 @@
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".BrowseActivity"
+            tools:context=".views.BrowseActivity"
             android:id="@+id/successView">
 
         <TextView

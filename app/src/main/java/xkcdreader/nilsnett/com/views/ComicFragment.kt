@@ -1,4 +1,4 @@
-package xkcdreader.nilsnett.com
+package xkcdreader.nilsnett.com.views
 
 import android.graphics.drawable.Drawable
 import android.net.Uri
@@ -19,6 +19,7 @@ import com.ortiz.touchview.TouchImageView
 import kotlinx.android.synthetic.main.fragment_comic.*
 import retrofit2.Call
 import retrofit2.Response
+import xkcdreader.nilsnett.com.R
 import xkcdreader.nilsnett.com.domainmodels.ComicInfo
 import xkcdreader.nilsnett.com.helpers.GlideTouchImageViewTarget
 import xkcdreader.nilsnett.com.networking.content.XkcdContentApi
