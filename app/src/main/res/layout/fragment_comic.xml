@@ -7,11 +7,9 @@
         android:layout_height="match_parent"
         tools:context=".BrowseActivity">
 
-    <androidx.viewpager.widget.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/viewPager">
-
-    </androidx.viewpager.widget.ViewPager>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/xkcdImage"/>
 
 </FrameLayout>
