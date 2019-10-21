@@ -18,6 +18,7 @@ data class ComicInfo(
     val description: String,
     val title: String,
     val uri: Uri,
+    val transcript: String,
     val dataOk: Boolean = true
 ) : Parcelable {
 
@@ -34,6 +35,7 @@ data class ComicInfo(
             ""
             ,""
             ,Uri.EMPTY,
+            "",
             false
         )
 
@@ -46,11 +48,15 @@ data class ComicInfo(
                     model.month.toInt() - 1,
                     model.day.toInt()
                 )
+                val transcript = model.transcript
+                    .replace("[[", "")
+                    .replace("]]", "")
                 return ComicInfo(
                     date,
                     model.alt,
                     model.title,
-                    uri
+                    uri,
+                    transcript
                 )
             } catch (ex: Exception) {
                 return ERRONOUS_OBJECT

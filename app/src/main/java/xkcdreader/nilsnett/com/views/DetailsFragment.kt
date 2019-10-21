@@ -32,5 +32,6 @@ class DetailsFragment(comicInfo: ComicInfo? = null) : BottomSheetDialogFragment(
         description.text = comic.description
         title.text = comic.title
         publishedDate.text = comic.humanReadableDate()
+        transcript.text = comic.transcript
     }
 }
