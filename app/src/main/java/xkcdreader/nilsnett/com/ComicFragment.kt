@@ -75,6 +75,7 @@ class ComicFragment(comicNumber: Int = -1) : Fragment() {
 
     fun present(comic: ComicInfo) {
         loadImage(comic.uri)
+        title.text = comic.title
     }
 
     private fun loadImage(imageUri: Uri) {
