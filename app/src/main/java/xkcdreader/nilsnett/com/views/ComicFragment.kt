@@ -31,6 +31,7 @@ class ComicFragment(comicNumber: Int = -1) : Fragment() {
     val TAG = "ComicFragment"
     val COMIC_NO_PARAM = "comic_no"
     var comicNo: Int = -1
+    var currentComic: ComicInfo? = null
 
     lateinit var imageView: TouchImageView
 
@@ -60,6 +61,7 @@ class ComicFragment(comicNumber: Int = -1) : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         imageView = TouchImageView(activity)
         imageContainer.addView(imageView, FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT)
+        imageView.setOnClickListener { showDetails() }
         loadImage()
     }
 
@@ -82,6 +84,7 @@ class ComicFragment(comicNumber: Int = -1) : Fragment() {
     }
 
     fun present(comic: ComicInfo) {
+        currentComic = comic
         errorView.text = getString(R.string.load_error, comicNo.toString())
         if (comic.dataOk) {
             loadImage(comic.uri)
@@ -107,6 +110,14 @@ class ComicFragment(comicNumber: Int = -1) : Fragment() {
                 .into(GlideTouchImageViewTarget(imageView))
         } catch (ex: Exception) {
             Log.e(TAG, "Loading XKCD image failed", ex)
+        }
+    }
+
+    fun showDetails() {
+        if (currentComic == null) return
+        activity?.let {
+            val frag = DetailsFragment(currentComic!!)
+            frag.show(it.supportFragmentManager, "tag")
         }
     }
 

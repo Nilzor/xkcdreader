@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="label_size">18sp</dimen>
+    <dimen name="label_padding">4dp</dimen>
+    <dimen name="label_width">110dp</dimen>
+</resources>
