@@ -23,7 +23,7 @@ class DetailsFragment(comicInfo: ComicInfo? = null) : BottomSheetDialogFragment(
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        comic = arguments!!.getParcelable(DATA_KEY)
+        comic = arguments!!.getParcelable(DATA_KEY)!!
         return inflater.inflate(R.layout.view_details, container)
     }
 

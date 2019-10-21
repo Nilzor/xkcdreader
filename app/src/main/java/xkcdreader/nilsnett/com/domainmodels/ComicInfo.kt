@@ -30,6 +30,7 @@ data class ComicInfo(
         return formatter.value.format(publishedDate)
     }
 
+    @Suppress("DEPRECATION") // Using deprecated Date constructor for convenience
     companion object {
         val ERRONOUS_OBJECT = ComicInfo(
             Date(),
