@@ -12,7 +12,7 @@
 
         <TextView android:layout_width="@dimen/label_width"
                   android:layout_height="wrap_content"
-                  android:text="Title:"
+                  android:text="@string/title"
                   android:textSize="24sp"
                   android:textStyle="bold"
         />
@@ -25,7 +25,6 @@
 
     </LinearLayout>
 
-
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:orientation="horizontal"
@@ -33,7 +32,7 @@
 
         <TextView android:layout_width="@dimen/label_width"
                   android:layout_height="wrap_content"
-                  android:text="Description:"
+                  android:text="@string/description"
                   android:textSize="@dimen/label_size"
                   android:textStyle="bold"
         />
@@ -53,7 +52,7 @@
 
         <TextView android:layout_width="@dimen/label_width"
                   android:layout_height="wrap_content"
-                  android:text="Published:"
+                  android:text="@string/published"
                   android:textSize="@dimen/label_size"
                   android:textStyle="bold"
         />
@@ -68,7 +67,7 @@
 
     <TextView android:layout_width="@dimen/label_width"
               android:layout_height="wrap_content"
-              android:text="Transcript:"
+              android:text="@string/transcript"
               android:textSize="@dimen/label_size"
               android:textStyle="bold"
               android:padding="@dimen/label_padding"

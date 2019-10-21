@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">XKCD reader</string>
     <string name="load_error">There was an error loading XKCD #%1$s</string>
+    <string name="title">Title:</string>
+    <string name="description">Description:</string>
+    <string name="published">Published:</string>
+    <string name="transcript">Transcript:</string>
 </resources>

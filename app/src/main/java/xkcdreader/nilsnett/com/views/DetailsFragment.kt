@@ -12,14 +12,18 @@ import xkcdreader.nilsnett.com.domainmodels.ComicInfo
 class DetailsFragment(comicInfo: ComicInfo? = null) : BottomSheetDialogFragment() {
     lateinit var comic: ComicInfo
 
+    companion object {
+        val DATA_KEY = "data"
+    }
+
     init {
         arguments = Bundle().also {
-            it.putParcelable("data", comicInfo)
+            it.putParcelable(DATA_KEY, comicInfo)
         }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        comic = arguments!!.getParcelable("data")
+        comic = arguments!!.getParcelable(DATA_KEY)
         return inflater.inflate(R.layout.view_details, container)
     }
 
