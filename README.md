@@ -3,6 +3,11 @@
 This repo is the reply I make to an  [assignment](https://github.com/shortcut/coding-assignment-mobile) on creating a 
 comic reader app. Below I will explain some of the choices I've made.
 
+## How to use
+
+- Swipe right to browse older comics. Left for newer. The app starts leftmost at the newest comic.
+- Tap image for details
+
 # Rationale for choices
 
 ## Browsing UI
@@ -34,3 +39,12 @@ This allows me to unit test conversion and parsing before it hits the UI layer.
 omit it. Separation between domain and network layers allowed me to put a lot of business logic outside of the Fragment
 and Activity classes still. For a production app aimed at living longer than this app, I'd definitely go for a view 
 pattern, possibly MVVM, to allow for better handling and better maintainability.   
+
+# Improvement points
+
+Here are some areas that I see need improvement:
+
+- UI could need better hints for what navigation patterns are available
+- No state is saved, so the app will reset after process kill
+- When transcript is present, the scrollview might fight with the bottom sheet for vertical scroll
+- The click to show the comic details is a bit sluggish, unknown why
