@@ -13,6 +13,7 @@ import com.ortiz.touchview.TouchImageView
 import kotlinx.android.synthetic.main.fragment_comic.*
 import retrofit2.Call
 import retrofit2.Response
+import xkcdreader.nilsnett.com.domainmodels.ComicInfo
 import xkcdreader.nilsnett.com.helpers.GlideTouchImageViewTarget
 import xkcdreader.nilsnett.com.networking.content.XkcdContentApi
 import xkcdreader.nilsnett.com.networking.content.XkcdContentNetworkData
@@ -59,8 +60,8 @@ class ComicFragment(comicNumber: Int = -1) : Fragment() {
         contentApi.getXkcd(comicNo).enqueue(object: retrofit2.Callback<XkcdContentNetworkData> {
             override fun onResponse(call: Call<XkcdContentNetworkData>, response: Response<XkcdContentNetworkData>) {
                 try {
-                    val uri = Uri.parse(response.body()!!.img)
-                    loadImage(uri)
+                    val comic = ComicInfo.fromNetworkModel(response.body())
+                    present(comic)
                 } catch (ex: Exception) {
                     Log.e(TAG, "Erronous image data from service:", ex)
                 }
@@ -70,6 +71,10 @@ class ComicFragment(comicNumber: Int = -1) : Fragment() {
                 Log.e(TAG, "Loading XKCD data failed", t)
             }
         })
+    }
+
+    fun present(comic: ComicInfo) {
+        loadImage(comic.uri)
     }
 
     private fun loadImage(imageUri: Uri) {
